@@ -1,0 +1,19 @@
+<h1 style="text-align: center; background-color: lightgreen;">Edit Category</h1>
+ 
+<%= form_with(model: @category) do |form| %>
+ 
+  <%= render 'errors'%>
+ 
+  <p>
+    <%= form.label :name %><br>
+    <%= form.text_field :name,class: 'form-control' %>
+  </p>
+ 
+  
+  <p>
+    <%= form.submit %>
+  </p>
+ 
+<% end %>
+ 
+<%= link_to 'Back', categories_path %>

@@ -1,0 +1,41 @@
+<div class="bgggg">
+<h1 style="text-align: center;background-color: lightgreen;">All Categories</h1>
+
+<% if has_role?(:admin) %>
+
+<%= link_to 'Add New Category', new_category_path %>
+<% end %>
+<br><br><br> 
+<table class="table">
+  <tr>
+    <th>Name</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+ 
+  <% @categories.each do |category| %>
+    <tr>
+      
+      
+      <td><%= category.name %></td>
+      <% if !has_role?(:admin) %>
+        <td><%= link_to 'Show', category_path(category) %></td>
+      <% end %>
+      <% if has_role?(:admin) %>
+        <td><%= link_to 'Add new Product', category_path(category) %></td>
+        <td><%= link_to 'Edit', edit_category_path(category) %></td>
+        <td><%= link_to 'Destroy', category_path(category),
+                method: :delete,
+              data: { confirm: 'Are you sure?' } %></td>   
+      <% end %>   
+    </tr>
+  <% end %>
+</table>
+
+
+
+<%= link_to 'logout', destroy_user_session_path, method: :delete %>
+
+
+</div>
