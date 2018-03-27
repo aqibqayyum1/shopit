@@ -17,6 +17,5 @@ class ApplicationController < ActionController::Base
       end
   end
 
-include ApplicationHelper
 
 end

@@ -1,0 +1,28 @@
+<table class="table">
+  <tr>
+    <th>Image</th>
+    <th>Name</th>
+    <th>Price</th>
+    
+    <th>Quantity</th>
+    <th>Product*Quantity</th>
+    <th></th>
+    
+  </tr>
+ 
+  <% @checkout_items.each do |order| %>
+    <tr>
+      <td>
+          <%= image_tag order.product.image.url(:thumb) %>  
+      </td>
+      <td><%= order.product.name %></td>
+      <td><%= order.product.price %></td>
+      <td><%= order.quantity %></td>
+    <td><%= order.total_price%></td>
+    
+    <td><%=%></td>
+  </tr>
+  <% end %>
+
+<h2 class="bg-info float-right">Total Bill:   <%= current_order.subtotal%></h2>
+</table>
