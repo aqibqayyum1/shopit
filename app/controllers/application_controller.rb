@@ -1,25 +1,7 @@
 
 class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
-  # before_action :current_carttt
-
-    # private
-    # def current_carttt
-      
-    #   if session[:carttt_id]
-    #     carttt = Carttt.find_by(:id => session[:carttt_id])
-    #     if carttt.present?
-    #       @current_carttt = carttt
-    #     else
-    #       session[:carttt_id] = nil
-    #     end
-    #   end
-
-    #   if session[:carttt_id] == nil
-    #     @current_carttt = Carttt.create
-    #     session[:carttt_id] = @current_carttt.id
-    #   end
-    # end
+  
     
     include ApplicationHelper
 
