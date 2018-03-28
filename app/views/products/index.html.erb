@@ -1,7 +1,5 @@
 <h1 style="text-align: center;">All Products of <span style="background-color: lightgreen;border-radius: 10%;"><%= @category.name %></span> Category</h1>
 
-
-
 <br><br><br> 
 <table class="table">
   <tr>
@@ -25,22 +23,18 @@
       <td><%= product.name %></td>
       <td><%= product.price %></td>
       <td><%= product.description %></td>
-   
-   <td> <%#= link_to "Add to cart", line_items_path(:product_id => product.id), method: :post %></td>
-   <td><%#=  link_to "Remove item", line_item_path(product), method: :delete %></td>   
-    <td>
-
-   
-    <div class="pull-right">
+       
+      <td>
+         <div class="pull-right">
           <%= form_for (@order_item), remote:true do |f|%>
-                  <%= f.hidden_field :product_id, value: product.id %>
-                 <h5><%= product.price %> </h5>
+            <%= f.hidden_field :product_id, value: product.id %>
+            <h5><%= product.price %> </h5>
          <div class="form-group">
           <%= f.text_field :quantity, value: 1, min: 1, class: 'form-control' %>
          </div> 
           <%= f.submit "Add to cart", class: 'btn btn-primary btn-sm'%>
           <% end %>
-          </div>
+         </div>
      </td>     
   </tr>
   <% end %>

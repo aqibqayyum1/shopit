@@ -3,9 +3,7 @@ class CategoriesController < ApplicationController
   before_action :authenticate_user!
   before_action :is_admin, only:[:new, :edit, :update, :destroy]
   def index
-  	
     @categories = Category.all.sort_by(&:created_at)
-  
   end
 
   def show
@@ -40,6 +38,7 @@ class CategoriesController < ApplicationController
      render 'edit'
     end
   end
+
   def destroy
     @category = Category.find(params[:id])
     @category.destroy
@@ -47,8 +46,7 @@ class CategoriesController < ApplicationController
     redirect_to categories_path
   end
 
-
-end #end of controller
+end 
 
 private
   def category_params
