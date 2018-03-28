@@ -8,6 +8,6 @@
 
   user = User.new
   user.email = "admin@gmail.com"
-  user.password = "admin"
+  user.password = "admin123"
   user.save
   user.add_role "admin"
